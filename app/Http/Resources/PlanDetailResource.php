@@ -18,9 +18,9 @@ class PlanDetailResource extends JsonResource
             'id' => $this->id,
             'plan_id' => $this->plan_id,
             'installments' => $this->installments,
-            'visa_master' => number_format($this->visa_master / 100, 2),
-            'visa_master' => number_format($this->price / 100, 2),
-            'visa_master' => number_format($this->price / 100, 2)
+            'visa_master' => $this->visa_master,
+            'others' => $this->others,
+            'mup' => $this->mup
         ];
     }
 }

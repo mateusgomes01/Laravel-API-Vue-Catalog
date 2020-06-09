@@ -13,4 +13,5 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+Route::view('/installs', 'installs');
 Route::view('/', 'home');

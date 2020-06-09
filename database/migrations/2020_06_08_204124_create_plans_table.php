@@ -18,7 +18,7 @@ class CreatePlansTable extends Migration
             $table->timestamps();
             $table->string('title')->unique();
             $table->string('plan_identification');
-            $table->string('plataform');
+            $table->string('platform');
         });
     }
 
