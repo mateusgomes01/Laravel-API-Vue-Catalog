@@ -2,7 +2,7 @@
     <div class="container" :class="{'loading': loading}">
         <div class="row">
             <div class="col-lg-3">
-                <h1 class="my-4">Shop Catalog2</h1>
+                <h1 class="my-4">Shop Catalog</h1>
                 <div class="list-group">
                     <a class="list-group-item" v-bind:for="category in categories">
                         {{ category.name }}

@@ -22,5 +22,5 @@ Route::get('categories', 'Api\CategoryController@index');
 Route::get('products', 'Api\ProductController@index');
 
 Route::get('plans', 'Api\PlanController@index');
-Route::get('plan_details', 'Api\PlanDetailController@index');
+Route::get('plan-details', 'Api\PlanDetailController@index');
 
