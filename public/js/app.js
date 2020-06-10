@@ -2024,38 +2024,10 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
+      val: 0,
       plans: [],
       planDetails: [],
       loading: true
@@ -19803,7 +19775,7 @@ var render = function() {
               expression: "val"
             }
           ],
-          attrs: { type: "text" },
+          attrs: { type: "number" },
           domProps: { value: _vm.val },
           on: {
             input: function($event) {
@@ -19823,11 +19795,11 @@ var render = function() {
                 _vm._v(" "),
                 _c("th", [_vm._v("Parcelas")]),
                 _vm._v(" "),
-                _c("th", [_vm._v("Valor p/ Consumidor")]),
+                _c("th", [_vm._v("Valor da parcela para CONSUMIDOR")]),
                 _vm._v(" "),
-                _c("th", [_vm._v("Taxa")]),
+                _c("th", [_vm._v("Custo TOTAL")]),
                 _vm._v(" "),
-                _c("th", [_vm._v("Val. Liquido")]),
+                _c("th", [_vm._v("Valor TOTAL Líquido para ESTABELECIMENTO")]),
                 _vm._v(" "),
                 _c("th", [
                   _vm._v("Valor cobrado para est. receber R$" + _vm._s(_vm.val))
@@ -19841,100 +19813,70 @@ var render = function() {
             _vm._v(" "),
             _c(
               "tbody",
-              _vm._l(_vm.planDetails, function(planDetail, index) {
+              _vm._l(_vm.planDetails.slice(1), function(planDetail) {
                 return _c("tr", { key: planDetail.id }, [
                   _c("td", [_vm._v(_vm._s(planDetail.plan_id))]),
                   _vm._v(" "),
                   _c("td", [_vm._v(_vm._s(planDetail.installments))]),
                   _vm._v(" "),
-                  _c("td", [_vm._v("Lorem")]),
+                  _c("td", [
+                    _vm._v(
+                      "R$" +
+                        _vm._s((_vm.val / planDetail.installments).toFixed(2))
+                    )
+                  ]),
                   _vm._v(" "),
                   _c("td", [_vm._v(_vm._s(planDetail.visa_master))]),
                   _vm._v(" "),
-                  _c("td", [_vm._v("dolor")]),
+                  _c("td", [
+                    _vm._v(
+                      "R$" +
+                        _vm._s(
+                          (
+                            _vm.val -
+                            (planDetail.visa_master / 100) * _vm.val
+                          ).toFixed(2)
+                        )
+                    )
+                  ]),
                   _vm._v(" "),
-                  _c("td", [_vm._v("sit")]),
+                  _c("td", [
+                    _vm._v(
+                      "R$" +
+                        _vm._s(
+                          (
+                            parseInt(_vm.val) +
+                            ((planDetail.visa_master / 100) * _vm.val) /
+                              (1 - planDetail.visa_master / 100)
+                          ).toFixed(2)
+                        )
+                    )
+                  ]),
                   _vm._v(" "),
-                  _c("td", [_vm._v("est")])
+                  _c("td", [
+                    _vm._v(
+                      "R$" +
+                        _vm._s(
+                          (
+                            (parseInt(_vm.val) +
+                              ((planDetail.visa_master / 100) * _vm.val) /
+                                (1 - planDetail.visa_master / 100)) /
+                            planDetail.installments
+                          ).toFixed(2)
+                        )
+                    )
+                  ])
                 ])
               }),
               0
             )
           ])
         ])
-      ]),
-      _vm._v(" "),
-      _c("div", { staticClass: "row" }, [
-        _c("div", { staticClass: "col-lg-3" }, [
-          _c("h1", { staticClass: "my-4" }, [
-            _vm._v("Simulador de Vendas - Euromercantil")
-          ]),
-          _vm._v(" "),
-          _c(
-            "div",
-            { staticClass: "list-group" },
-            _vm._l(_vm.plans, function(plan) {
-              return _c("a", { key: plan.id, staticClass: "list-group-item" }, [
-                _vm._v(
-                  "\n                        " +
-                    _vm._s(plan.title) +
-                    "\n                    "
-                )
-              ])
-            }),
-            0
-          )
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "col-lg-9" }, [
-          _c(
-            "div",
-            { staticClass: "row mt-4" },
-            _vm._l(_vm.planDetails, function(planDetail) {
-              return _c(
-                "div",
-                { key: planDetail.id, staticClass: "col-lg-4 col-md-6 mb-4" },
-                [
-                  _c("div", { staticClass: "card h-100" }, [
-                    _vm._m(0, true),
-                    _vm._v(" "),
-                    _c("div", { staticClass: "card-body" }, [
-                      _c("h4", { staticClass: "card-title" }, [
-                        _c("a", { attrs: { href: "#" } }, [
-                          _vm._v(_vm._s(planDetail.installments))
-                        ])
-                      ]),
-                      _vm._v(" "),
-                      _c("h5", [_vm._v("$ " + _vm._s(planDetail.visa_master))]),
-                      _vm._v(" "),
-                      _c("p", { staticClass: "card-text" }, [
-                        _vm._v(_vm._s(planDetail.others))
-                      ])
-                    ])
-                  ])
-                ]
-              )
-            }),
-            0
-          )
-        ])
       ])
     ]
   )
 }
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("a", { attrs: { href: "#" } }, [
-      _c("img", {
-        staticClass: "card-img-top",
-        attrs: { src: "http://placehold.it/700x400", alt: "" }
-      })
-    ])
-  }
-]
+var staticRenderFns = []
 render._withStripped = true
 
 
