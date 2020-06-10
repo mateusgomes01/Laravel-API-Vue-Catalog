@@ -1,5 +1,36 @@
 <template>
     <div class="container" :class="{'loading': loading}">
+        <div id="vue-app">
+		<h1>Simulador de Parcelas</h1>
+		<label>Valor:</label>
+		<input type="text" v-model="val"/><!--picks input and puts in variable-->
+        <div class="table-responsive">
+            <table class="table table-striped table-sm">
+            <thead>
+                <tr>
+                <th>Id do plano</th>
+                <th>Parcelas</th>
+                <th>Valor p/ Consumidor</th>
+                <th>Taxa</th>
+                <th>Val. Liquido</th>
+                <th>Valor cobrado para est. receber R${{val}}</th>
+                <th>Valor parcela para est. receber R${{val}}</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr v-for="(planDetail, index) in planDetails" :key="planDetail.id">
+                <td>{{planDetail.plan_id}}</td>
+                <td>{{planDetail.installments}}</td>
+                <td>Lorem</td>
+                <td>{{planDetail.visa_master}}</td>
+                <td>dolor</td>
+                <td>sit</td>
+                <td>est</td>
+                </tr>
+            </tbody>
+            </table>
+		</div>
+	</div>
         <div class="row">
             <div class="col-lg-3">
                 <h1 class="my-4">Simulador de Vendas - Euromercantil</h1>

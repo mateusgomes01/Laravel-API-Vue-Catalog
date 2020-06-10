@@ -18,9 +18,9 @@ class CreatePlanDetailsTable extends Migration
             $table->timestamps();
             $table->foreignId('plan_id')->constrained();
             $table->integer('installments');
-            $table->decimal('visa_master', 3, 2);
-            $table->decimal('others', 3, 2);
-            $table->decimal('mup', 3, 2);
+            $table->decimal('visa_master', 4, 2);
+            $table->decimal('others', 4, 2);
+            $table->decimal('mup', 4, 2);
         });
         /*
         Schema::table('plan_details', function(Blueprint $table) {

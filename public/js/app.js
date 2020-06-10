@@ -2022,6 +2022,37 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -19758,6 +19789,81 @@ var render = function() {
     "div",
     { staticClass: "container", class: { loading: _vm.loading } },
     [
+      _c("div", { attrs: { id: "vue-app" } }, [
+        _c("h1", [_vm._v("Simulador de Parcelas")]),
+        _vm._v(" "),
+        _c("label", [_vm._v("Valor:")]),
+        _vm._v(" "),
+        _c("input", {
+          directives: [
+            {
+              name: "model",
+              rawName: "v-model",
+              value: _vm.val,
+              expression: "val"
+            }
+          ],
+          attrs: { type: "text" },
+          domProps: { value: _vm.val },
+          on: {
+            input: function($event) {
+              if ($event.target.composing) {
+                return
+              }
+              _vm.val = $event.target.value
+            }
+          }
+        }),
+        _vm._v(" "),
+        _c("div", { staticClass: "table-responsive" }, [
+          _c("table", { staticClass: "table table-striped table-sm" }, [
+            _c("thead", [
+              _c("tr", [
+                _c("th", [_vm._v("Id do plano")]),
+                _vm._v(" "),
+                _c("th", [_vm._v("Parcelas")]),
+                _vm._v(" "),
+                _c("th", [_vm._v("Valor p/ Consumidor")]),
+                _vm._v(" "),
+                _c("th", [_vm._v("Taxa")]),
+                _vm._v(" "),
+                _c("th", [_vm._v("Val. Liquido")]),
+                _vm._v(" "),
+                _c("th", [
+                  _vm._v("Valor cobrado para est. receber R$" + _vm._s(_vm.val))
+                ]),
+                _vm._v(" "),
+                _c("th", [
+                  _vm._v("Valor parcela para est. receber R$" + _vm._s(_vm.val))
+                ])
+              ])
+            ]),
+            _vm._v(" "),
+            _c(
+              "tbody",
+              _vm._l(_vm.planDetails, function(planDetail, index) {
+                return _c("tr", { key: planDetail.id }, [
+                  _c("td", [_vm._v(_vm._s(planDetail.plan_id))]),
+                  _vm._v(" "),
+                  _c("td", [_vm._v(_vm._s(planDetail.installments))]),
+                  _vm._v(" "),
+                  _c("td", [_vm._v("Lorem")]),
+                  _vm._v(" "),
+                  _c("td", [_vm._v(_vm._s(planDetail.visa_master))]),
+                  _vm._v(" "),
+                  _c("td", [_vm._v("dolor")]),
+                  _vm._v(" "),
+                  _c("td", [_vm._v("sit")]),
+                  _vm._v(" "),
+                  _c("td", [_vm._v("est")])
+                ])
+              }),
+              0
+            )
+          ])
+        ])
+      ]),
+      _vm._v(" "),
       _c("div", { staticClass: "row" }, [
         _c("div", { staticClass: "col-lg-3" }, [
           _c("h1", { staticClass: "my-4" }, [
@@ -19770,9 +19876,9 @@ var render = function() {
             _vm._l(_vm.plans, function(plan) {
               return _c("a", { key: plan.id, staticClass: "list-group-item" }, [
                 _vm._v(
-                  "\n                    " +
+                  "\n                        " +
                     _vm._s(plan.title) +
-                    "\n                "
+                    "\n                    "
                 )
               ])
             }),
