@@ -22,7 +22,7 @@
                     <td>{{planDetail.plan_id}}</td>
                     <td>{{planDetail.installments}}</td>
                     <td>R${{(val / planDetail.installments).toFixed(2)}}</td>
-                    <td>{{planDetail.visa_master}}</td>
+                    <td>{{planDetail.visa_master}}%</td>
                     <td>R${{(val - ((planDetail.visa_master/100) * val)).toFixed(2)}}</td>
                     <td>R${{(parseInt(val) + (((planDetail.visa_master/100)*val)/(1-(planDetail.visa_master/100)))).toFixed(2)}}</td>
                     <td>R${{((parseInt(val) + (((planDetail.visa_master/100)*val)/(1-(planDetail.visa_master/100))))/planDetail.installments).toFixed(2) }}</td>

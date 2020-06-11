@@ -19826,7 +19826,7 @@ var render = function() {
                     )
                   ]),
                   _vm._v(" "),
-                  _c("td", [_vm._v(_vm._s(planDetail.visa_master))]),
+                  _c("td", [_vm._v(_vm._s(planDetail.visa_master) + "%")]),
                   _vm._v(" "),
                   _c("td", [
                     _vm._v(
