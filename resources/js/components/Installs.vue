@@ -73,6 +73,11 @@
             },
 
             
+        },
+        computed: {
+            orderedPlanDetails: function () {
+                return _.orderBy(this.planDetails, 'installments')
+            }
         }
 
     }
